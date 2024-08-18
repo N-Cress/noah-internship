@@ -61,7 +61,7 @@ const HotCollections = () => {
             </div>
           </div>
           <Slider {...settings}>
-          { !!dataSet ? dataSet.map((obj) => (
+          { false ? dataSet.map((obj) => (
             <div className="col"key={obj.id}>
               <div className="nft_coll">
                 <div className="nft_wrap">
