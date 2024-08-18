@@ -7,11 +7,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HotCollections = () => {
-  const [dataSet, setDataSet] = useState([]);
+  const [dataSet, setDataSet] = useState(false);
   let data;
 
   var settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -41,6 +40,7 @@ const HotCollections = () => {
     ]
   };
 
+  
   useEffect((
   ) => {
     async function getData() {
@@ -50,8 +50,6 @@ const HotCollections = () => {
     getData()
     
   }, [])
-  console.log(dataSet)
-  let fake;
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
@@ -96,8 +94,8 @@ const HotCollections = () => {
                   <i className="fa fa-check"></i>
                 </div>
                 <div className="nft_coll_info">                
-                    <div class="lazy-title"></div>
-                  <div class="lazy-code"></div>
+                    <div className="lazy-title"></div>
+                  <div className="lazy-code"></div>
                 </div>
               </div>
             </div>
