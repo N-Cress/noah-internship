@@ -11,9 +11,10 @@
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
 
+/* Arrow Fixes */
+
 .slick-prev:before, .slick-next:before {
     color: #09529b !important;
-   
   }
 
 .slick-prev {
@@ -23,3 +24,29 @@
 .slick-next {
     right: -5px !important;
 }
+
+/* Lazy Load - HotCollections */ 
+
+.lazy-nft_wrap {
+    background-color: #dddcdc;
+    
+}
+
+.lazy-title {
+    background-color: #dddcdc;
+    padding: 10px;
+    margin: 15px;
+}
+
+.lazy-code {
+    background-color: #dddcdc;
+    padding: 10px;
+    margin: 10px 40px;
+}
+
+.lazy-pp_coll {
+    background-color: #dddcdc;
+    padding: 30px;
+    border-radius: 50%;
+}
+

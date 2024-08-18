@@ -51,6 +51,7 @@ const HotCollections = () => {
     
   }, [])
   console.log(dataSet)
+  let fake;
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
@@ -84,7 +85,23 @@ const HotCollections = () => {
                 </div>
               </div>
             </div> 
-          )) : <div> Hello </div>}
+          )) : new Array(4).fill(0).map((_, index) => (
+            <div className="col" key={index}>
+              <div className="nft_coll">
+                <div className="lazy-nft_wrap nft_wrap">
+                    <div className="lazy__img-fluid" > </div>
+                </div>
+                <div className="nft_coll_pp">
+                    <div className="lazy-pp_coll lazy pp-coll" alt="" > </div>
+                  <i className="fa fa-check"></i>
+                </div>
+                <div className="nft_coll_info">                
+                    <div class="lazy-title"></div>
+                  <div class="lazy-code"></div>
+                </div>
+              </div>
+            </div>
+          ))}
           </Slider>
          
         </div>
