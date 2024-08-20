@@ -96,8 +96,55 @@
     border-radius: 50%;
 }
 
-@keyframes shimmer {
-    100% {
-      transform: translateX(100%);
-    }
-  }
+/* NEWITEMS - LAZY LOAD */
+
+.lazy-author_pp {
+    background: linear-gradient(40deg, #fcfffe, #727a78);
+    background-size: 400% 400%;
+    padding: 30px;
+    border-radius: 50%;    
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+}
+
+.lazy-nft__item_wrap {
+    background: linear-gradient(40deg, #fcfffe, #727a78);
+    background-size: 400% 400%;   
+    margin-bottom: 10px;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+}
+
+.lazy-item_title {
+    background: linear-gradient(40deg, #fcfffe, #727a78);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+    padding: 15px;
+    width: 70%;
+    margin-bottom: 5px;
+}
+
+.lazy-item_price {
+    background: linear-gradient(40deg, #fcfffe, #727a78);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+    padding: 10px;
+    width: 40%;
+}
+
+.lazy-item_like {
+    background: linear-gradient(40deg, #fcfffe, #727a78);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+    padding: 10px;
+    width: 20%;
+}
