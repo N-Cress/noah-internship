@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -82,7 +80,7 @@ const NewItems = () => {
     const secondsText = Math.floor(secondsLeft % 60);
     const minutesText = Math.floor(minutesLeft % 60);
     const hoursText = Math.floor(hoursLeft % 24);
-
+  
     return `${hoursText} h ${minutesText} m ${secondsText} s`;
   };
 

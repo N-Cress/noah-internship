@@ -1,8 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+
+
 
 const TopSellers = () => {
+  const [dataSet, setDataSet] = useState(false);  
+  let data;
+  useEffect(() => {
+    async function getData() {
+      ({data} = await axios.get("https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"))
+      setDataSet(data)
+    }
+    getData()
+  }, [])
+  
   return (
     <section id="section-popular" className="pb-5">
       <div className="container">
@@ -15,21 +29,31 @@ const TopSellers = () => {
           </div>
           <div className="col-md-12">
             <ol className="author_list">
-              {new Array(12).fill(0).map((_, index) => (
-                <li key={index}>
+              {false ? dataSet.map((obj) => (
+                <li key={obj.id}>
                   <div className="author_list_pp">
-                    <Link to="/author">
+                    <Link to={`/author/${obj.authorId}`}>
                       <img
                         className="lazy pp-author"
-                        src={AuthorImage}
+                        src={obj.authorImage}
                         alt=""
                       />
                       <i className="fa fa-check"></i>
                     </Link>
                   </div>
                   <div className="author_list_info">
-                    <Link to="/author">Monica Lucas</Link>
-                    <span>2.1 ETH</span>
+                    <Link to={`/author/${obj.authorId}`}>{obj.authorName}</Link>
+                    <span>{obj.price} ETH</span>
+                  </div>
+                </li>
+              ))  :new Array(12).fill(0).map((_, index) => (
+                <li key={index}>
+                  <div className="lazy-author_pp author_list_pp">
+                      <i className="fa fa-check"></i>
+                  </div>
+                  <div className="author_list_info lazy-author_list_info">
+                    <div className="lazy-author_name"></div>
+                    <div className="lazy-author_price"></div>
                   </div>
                 </li>
               ))}
