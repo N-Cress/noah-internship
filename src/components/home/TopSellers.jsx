@@ -29,7 +29,7 @@ const TopSellers = () => {
           </div>
           <div className="col-md-12">
             <ol className="author_list">
-              {false ? dataSet.map((obj) => (
+              {dataSet ? dataSet.map((obj) => (
                 <li key={obj.id}>
                   <div className="author_list_pp">
                     <Link to={`/author/${obj.authorId}`}>
