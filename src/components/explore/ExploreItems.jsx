@@ -10,7 +10,7 @@ const ExploreItems = () => {
 
   const sortByLinkChange = () => {
     let changeValue= document.getElementById("filter-items").value;
-    setLink(baseLink + "?" + changeValue)
+    setLink(baseLink + "?filter=" + changeValue)
   }
 
 
