@@ -4,8 +4,15 @@ import { useState } from "react";
 import ItemsDisplay from "../items/itemsDisplay";
 
 const ExploreItems = () => {
-  const link = "https://us-central1-nft-cloud-functions.cloudfunctions.net/explore";
+  const baseLink = "https://us-central1-nft-cloud-functions.cloudfunctions.net/explore";
+  const [link, setLink] = useState(baseLink)
   const [amount, setAmount] = useState(8);
+
+  const sortByLinkChange = () => {
+    let changeValue= document.getElementById("filter-items").value;
+    setLink(baseLink + "?" + changeValue)
+  }
+
 
   const displayMore = () => {
     setAmount(prevAmount => prevAmount + 4);
@@ -14,7 +21,7 @@ const ExploreItems = () => {
   return (
     <>
       <div>
-        <select id="filter-items" defaultValue="">
+        <select onChange={sortByLinkChange} id="filter-items" defaultValue="">
           <option value="">Default</option>
           <option value="price_low_to_high">Price, Low to High</option>
           <option value="price_high_to_low">Price, High to Low</option>

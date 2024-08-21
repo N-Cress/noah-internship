@@ -3,57 +3,22 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Slider from "react-slick";
+import TimeLeft from "./TimeLeft";
 
 function ItemsDisplay({link, settings, lazySize, displayAmount}) {
-    const [timeLeft, setTimeLeft] = useState({});
     const [dataSet, setDataSet] = useState([false]);
-
-
-    
     useEffect(() => {
         async function getData() {
-          const { data } = await axios.get(
-            link
-          );
-          setDataSet(data.slice(0, displayAmount));
-          
-          
-          const initialTimes = data.reduce((acc, obj) => {
-            acc[obj.id] = obj.expiryDate - Date.now();
-            return acc;
-          }, {});
-          setTimeLeft(initialTimes);
+            try {
+                const { data } = await axios.get(link);
+                setDataSet(data.slice(0, displayAmount));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         }
         getData();
-      }, [link, displayAmount]);
+    }, [link, displayAmount]);
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-          setTimeLeft((prevTimes) => {
-            const newTimes = {};
-            for (const id in prevTimes) {
-              if (prevTimes.hasOwnProperty(id)) {
-                newTimes[id] = Math.max(prevTimes[id] - 1000, 0);
-              }
-            }
-            return newTimes;
-          });
-        }, 1000);
-    
-        return () => clearInterval(timer);
-      }, []);
-    
-      const formatTime = (millis) => {
-        const secondsLeft = millis / 1000;
-        const minutesLeft = secondsLeft / 60;
-        const hoursLeft = minutesLeft / 60;
-    
-        const secondsText = Math.floor(secondsLeft % 60);
-        const minutesText = Math.floor(minutesLeft % 60);
-        const hoursText = Math.floor(hoursLeft % 24);
-      
-        return `${hoursText} h ${minutesText} m ${secondsText} s`;
-      };
       
   return (
     <div>
@@ -73,13 +38,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
-                {obj.expiryDate ? (
-                  <div className={`de_countdown`}>
-                    {formatTime(timeLeft[obj.id])}
-                  </div>
-                ) : (
-                  <div> </div>
-                )}
+                <TimeLeft expiryDate={obj.expiryDate}> </TimeLeft>
     
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
@@ -112,7 +71,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
                   <Link to={`/item-details/${obj.nftId}`}>
                     <h4>{obj.title}</h4>
                   </Link>
-                  <div className="nft__item_price">{obj.price}</div>
+                  <div className="nft__item_price">{obj.price} ETH</div>
                   <div className="nft__item_like">
                     <i className="fa fa-heart"></i>
                     <span>{obj.likes}</span>
@@ -170,13 +129,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
-                {obj.expiryDate ? (
-                  <div className={`de_countdown`}>
-                    {formatTime(timeLeft[obj.id])}
-                  </div>
-                ) : (
-                  <div> </div>
-                )}
+                <TimeLeft expiryDate={obj.expiryDate}> </TimeLeft>
     
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
@@ -209,7 +162,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
                   <Link to={`/item-details/${obj.nftId}`}>
                     <h4>{obj.title}</h4>
                   </Link>
-                  <div className="nft__item_price">{obj.price}</div>
+                  <div className="nft__item_price">{obj.price} ETH</div>
                   <div className="nft__item_like">
                     <i className="fa fa-heart"></i>
                     <span>{obj.likes}</span>
