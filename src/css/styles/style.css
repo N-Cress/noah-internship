@@ -16898,4 +16898,73 @@ img {
   flex-wrap: wrap;
 }
 
+/* AUTHOR - LAZY LOAD */
 
+.lazy-profile_follow {
+  background: linear-gradient(40deg, #fcfffe, #727a78);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  padding: 0px 80px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.lazy-profile_pp {
+  background: linear-gradient(40deg, #fcfffe, #727a78);
+  background-size: 400% 400%;
+  padding: 80px;
+  border-radius: 50%;    
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+}
+
+.lazy-profile_name {
+  background: linear-gradient(40deg, #fcfffe, #727a78);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  padding: 10px 40px;
+  margin-bottom: 5px;
+}
+
+.lazy-profile_tag {
+  background: linear-gradient(40deg, #fcfffe, #727a78);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  padding: 10px 60px;
+  margin-bottom: 5px;
+}
+
+.lazy-profile_wallet {
+  background: linear-gradient(40deg, #fcfffe, #727a78);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  padding: 10px 40px;
+}
+
+@media only screen and (max-width: 770px) {
+  .lazy-profile_pp {
+    padding: 120px;
+    margin: 0 100px;
+  }
+}
+
+/* AUTHORITEMS - LAZY LOAD */
+
+.lazy-nft__item {
+  background: linear-gradient(40deg, #fcfffe, #727a78);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  -moz-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  padding: 10px 40px;
+
+}
