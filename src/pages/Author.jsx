@@ -27,7 +27,7 @@ const Author = () => {
         <div id="top"></div>
         <section
           id="profile_banner"
-          aria-label="section"
+          aria-label="  section"
           className="text-light"
           data-bgimage="url(images/author_banner.jpg) top"
           style={{ background: `url(${AuthorBanner}) top` }}
@@ -97,7 +97,6 @@ const Author = () => {
                   authorImage={dataSet.authorImage}
                   authorId = {dataSet.authorId}
                   />
-
                 </div>
               </div>
             </div>
