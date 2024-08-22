@@ -12,6 +12,12 @@ const AuthorItems = ( {nftCollection, authorImage, authorId} ) => {
           {nftCollection ? nftCollection.map((obj) => (
               <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={obj.id}>
                 <div className="nft__item">
+                <div className="author_list_pp">
+                  <Link reloadDocument to={`/author/` + authorId}>
+                      <img className="lazy" src={authorImage} alt="" />
+                      <i className="fa fa-check"></i>
+                    </Link>
+                  </div>
                   <div className="nft__item_wrap">
                     <div className="nft__item_extra">
                       <div className="nft__item_buttons">
