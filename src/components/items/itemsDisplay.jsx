@@ -116,7 +116,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
             </Slider>
             : <div className="filler">
             {dataSet ? dataSet.map((obj) => (
-            <div className="col-3" key={obj.id}>
+            <div className="col-lg-3 col-md-4 col-sm-6" key={obj.id}>
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
