@@ -33,6 +33,7 @@ AOS.init({
 const Explore = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Comment //
   }, []);
 
   return (
