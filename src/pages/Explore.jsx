@@ -34,6 +34,7 @@ const Explore = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     // Comment //
+    // FROM MAIN - IMPORTANT //
   }, []);
 
   return (
