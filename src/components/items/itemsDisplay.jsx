@@ -29,6 +29,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
+                    reloadDocument
                     to={`/author/${obj.authorId}`}
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
@@ -120,6 +121,7 @@ function ItemsDisplay({link, settings, lazySize, displayAmount}) {
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
+                    reloadDocument
                     to={`/author/${obj.authorId}`}
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"

@@ -22,7 +22,7 @@ AOS.init({
   
 
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120, // offset (in px) from the original trigger point
+  offset: 0, // offset (in px) from the original trigger point
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: 'ease', // default easing for AOS animations
@@ -46,7 +46,7 @@ const TopSellers = () => {
   
   return (
     <section id="section-popular" className="pb-5">
-      <div data-aos="fade-up" className="container">
+      <div data-aos="fade-up" data-aos-offset="-600" className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">

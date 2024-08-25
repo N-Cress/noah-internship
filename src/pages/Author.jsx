@@ -56,8 +56,8 @@ const Author = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="profile_follow de-flex">
-                    <div className="de-flex-col">
+                  <div  className="profile_follow de-flex">
+                    <div id="profile_follow" className="de-flex-col">
                       {follow ? <div className="profile_follower"> {dataSet.followers + 1} followers</div> : <div className="profile_follower"> {dataSet.followers} followers</div>}
                       <Link to="#" className="btn-main">
                       {!follow ? <div onClick={followButton}> Follow </div> : <div onClick={followButton}> Unfollow </div>}

@@ -15,7 +15,7 @@ function TimeLeft({ expiryDate }) {
           const hoursLeft = Math.floor((difference / (1000 * 60 * 60)) % 24);
           const daysLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
   
-          setTimeLeft(`${daysLeft} d ${hoursLeft} h ${minutesLeft} m ${secondsLeft} s`);
+          setTimeLeft(`${hoursLeft} h ${minutesLeft} m ${secondsLeft} s`);
         } else {
           setTimeLeft("Expired");
         }
@@ -34,7 +34,9 @@ function TimeLeft({ expiryDate }) {
             {timeLeft}
           </div>
         ) : (
-          <div> </div>
+        <div className="de_countdown">
+          Expired
+        </div>
         )}
       </div>
     );
