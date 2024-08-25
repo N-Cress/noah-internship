@@ -12,7 +12,7 @@ const Author = () => {
   function followButton() {
     setFollow(!follow);
   }
-
+  
   useEffect(() => {
     let data;
     async function getData() {

@@ -59,7 +59,7 @@ const TopSellers = () => {
               {dataSet ? dataSet.map((obj) => (
                 <li key={obj.id}>
                   <div className="author_list_pp">
-                    <Link to={`/author/${obj.authorId}`}>
+                    <Link reloadDocument to={`/author/${obj.authorId}`}>
                       <img
                         className="lazy pp-author"
                         src={obj.authorImage}
@@ -69,7 +69,7 @@ const TopSellers = () => {
                     </Link>
                   </div>
                   <div className="author_list_info">
-                    <Link to={`/author/${obj.authorId}`}>{obj.authorName}</Link>
+                    <Link reloadDocument to={`/author/${obj.authorId}`}>{obj.authorName}</Link>
                     <span>{obj.price} ETH</span>
                   </div>
                 </li>
